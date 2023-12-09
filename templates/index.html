@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./../static/css/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Car Price Prediction</title>
+</head>
+
+<body>
+
+    <body class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="card mt-50" style="width: 100%; height: 100%">
+                    <div class="card-header" style="text-align: center">
+                        <h1>Welcome to Car Price Predictor</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-12" style="text-align: center">
+                            <h5>This app predicts the price of a car you want to sell. Try filling the details below:
+                            </h5>
+                        </div>
+                        <br>
+                        <form method="post" accept-charset="utf-8" name="Modelform">
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the car model:</b> </label><br>
+                                <select class="selectpicker form-control" id="Car" name="Car" required="1">
+                                    {% for Car in Car %}
+                                    <option value="{{ Car }}">{{ Car }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select Year:</b> </label><br>
+                                <select class="selectpicker form-control" id="Year" name="Year" required="1">
+                                    {% for Year in Year %}
+                                    <option value="{{ Year }}">{{ Year }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select Color:</b> </label><br>
+                                <select class="selectpicker form-control" id="Color" name="Color" required="1">
+                                    {% for Color in Color %}
+                                    <option value="{{ Color }}">{{ Color }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Fuel Type:</b> </label><br>
+                                <select class="selectpicker form-control" id="Fuel" name="Fuel" required="1">
+                                    {% for Fuel in Fuel %}
+                                    <option value="{{ Fuel }}">{{ Fuel }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Origin:</b> </label><br>
+                                <select class="selectpicker form-control" id="Origin" name="Origin" required="1">
+                                    {% for Origin in Origin %}
+                                    <option value="{{ Origin }}">{{ Origin }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the License Type:</b> </label><br>
+                                <select class="selectpicker form-control" id="License" name="License" required="1">
+                                    {% for License in License %}
+                                    <option value="{{ License }}">{{ License }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Gear Type:</b> </label><br>
+                                <select class="selectpicker form-control" id="Gear" name="Gear" required="1">
+                                    {% for Gear in Gear %}
+                                    <option value="{{ Gear }}">{{ Gear }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Glass Type:</b> </label><br>
+                                <select class="selectpicker form-control" id="Glass" name="Glass" required="1">
+                                    {% for Glass in Glass %}
+                                    <option value="{{ Glass }}">{{ Glass }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Power :</b> </label><br>
+                                <select class="selectpicker form-control" id="Power" name="Power" required="1">
+                                    {% for Power in Power %}
+                                    <option value="{{ Power }}">{{ Power }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Meter :</b> </label><br>
+                                <select class="selectpicker form-control" id="Meter" name="Meter" required="1">
+                                    {% for Meter in Meter %}
+                                    <option value="{{ Meter }}">{{ Meter }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Passengers :</b> </label><br>
+                                <select class="selectpicker form-control" id="Passengers" name="Passengers"
+                                    required="1">
+                                    {% for Passengers in Passengers %}
+                                    <option value="{{ Passengers }}">{{ Passengers }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Payment:</b> </label><br>
+                                <select class="selectpicker form-control" id="Payment" name="Payment" required="1">
+                                    {% for Payment in Payment %}
+                                    <option value="{{ Payment }}">{{ Payment }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Previous_owners:</b> </label><br>
+                                <select class="selectpicker form-control" id="Previous_owners" name="Previous_owners"
+                                    required="1">
+                                    {% for Previous_owners in Previous_owners %}
+                                    <option value="{{ Previous_owners }}">{{ Previous_owners }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Condition Type:</b> </label><br>
+                                <select class="selectpicker form-control" id="Condition" name="Condition" required="1">
+                                    {% for Condition in Condition %}
+                                    <option value="{{ Condition }}">{{ Condition }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Central locking:</b> </label><br>
+                                <select class="selectpicker form-control" id="Central_locking" name="Central_locking"
+                                    required="1">
+                                    {% for Central_locking in Central_locking %}
+                                    <option value="{{ Central_locking }}">{{ Central_locking }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Alarm:</b> </label><br>
+                                <select class="selectpicker form-control" id="Alarm" name="Alarm" required="1">
+                                    {% for Alarm in Alarm %}
+                                    <option value="{{ Alarm }}">{{ Alarm }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Radio:</b> </label><br>
+                                <select class="selectpicker form-control" id="Radio" name="Radio" required="1">
+                                    {% for Radio in Radio %}
+                                    <option value="{{ Radio }}">{{ Radio }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Sunroof:</b> </label><br>
+                                <select class="selectpicker form-control" id="Sunroof" name="Sunroof" required="1">
+                                    {% for Sunroof in Sunroof %}
+                                    <option value="{{ Sunroof }}">{{ Sunroof }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Magnesium wheels:</b> </label><br>
+                                <select class="selectpicker form-control" id="Magnesium_wheels" name="Magnesium_wheels"
+                                    required="1">
+                                    {% for Magnesium_wheels in Magnesium_wheels %}
+                                    <option value="{{ Magnesium_wheels }}">{{ Magnesium_wheels }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Leather seats:</b> </label><br>
+                                <select class="selectpicker form-control" id="Leather_seats" name="Leather_seats"
+                                    required="1">
+                                    {% for Leather_seats in Leather_seats %}
+                                    <option value="{{ Leather_seats }}">{{ Leather_seats }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the Airbag:</b> </label><br>
+                                <select class="selectpicker form-control" id="Airbag" name="Airbag" required="1">
+                                    {% for Airbag in Airbag %}
+                                    <option value="{{ Airbag }}">{{ Airbag }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the For_sale:</b> </label><br>
+                                <select class="selectpicker form-control" id="For_sale" name="For_sale" required="1">
+                                    {% for For_sale in For_sale %}
+                                    <option value="{{ For_sale }}">{{ For_sale }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <label><b>Select the For exchange:</b> </label><br>
+                                <select class="selectpicker form-control" id="For_exchange" name="For_exchange"
+                                    required="1">
+                                    {% for For_exchange in For_exchange %}
+                                    <option value="{{ For_exchange }}">{{ For_exchange }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-md-10 form-group" style="text-align: center">
+                                <button class="btn btn-primary form-control" onclick="send_data()">Predict
+                                    Price</button>
+                            </div>
+                        </form>
+                        <br>
+                        <div class="row">
+                            <div class="col-12" style="text-align: center">
+                                <h4><span id="prediction"></span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+
+            function form_handler(event) {
+                event.preventDefault();
+            }
+            function send_data() {
+                document.querySelector('form').addEventListener("submit", form_handler);
+                var fd = new FormData(document.querySelector('form'));
+                var xhr = new XMLHttpRequest({ mozSystem: true });
+                xhr.open('POST', '/predict', true);
+                document.getElementById('prediction').innerHTML = "انتظر ! جاري حساب السعر ......ء";
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == XMLHttpRequest.DONE) {
+                        document.getElementById('prediction').innerHTML = "  السعر : شيكل فقط" + "   " + xhr.responseText;
+                    }
+                };
+                xhr.onload = function () { };
+                xhr.send(fd);
+            }
+        </script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
