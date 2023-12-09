@@ -53,13 +53,15 @@
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
-                                <label><b>Select the Fuel Type:</b> </label><br>
+                                <label><b>Select the Fuel Type:</b></label><br>
                                 <select class="selectpicker form-control" id="Fuel" name="Fuel" required="1">
-                                    {% for Fuel in Fuel %}
-                                    <option value="{{ Fuel }}">{{ Fuel }}</option>
-                                    {% endfor %}
+                                    <option value="0">ديزل</option>
+                                    <option value="1">بنزين</option>
+                                    <option value="2">هايبرد</option>
+                                    <option value="2">كهرباء</option>
                                 </select>
                             </div>
+
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Origin:</b> </label><br>
                                 <select class="selectpicker form-control" id="Origin" name="Origin" required="1">
@@ -69,29 +71,30 @@
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
-                                <label><b>Select the License Type:</b> </label><br>
+                                <label><b>Select the License Type:</b></label><br>
                                 <select class="selectpicker form-control" id="License" name="License" required="1">
-                                    {% for License in License %}
-                                    <option value="{{ License }}">{{ License }}</option>
-                                    {% endfor %}
+                                    <option value="0">نمرة صفراء</option>
+                                    <option value="1">فلسطينية</option>
                                 </select>
                             </div>
+
                             <div class="col-md-10 form-group" style="text-align: center">
-                                <label><b>Select the Gear Type:</b> </label><br>
+                                <label><b>Select the Gear Type:</b></label><br>
                                 <select class="selectpicker form-control" id="Gear" name="Gear" required="1">
-                                    {% for Gear in Gear %}
-                                    <option value="{{ Gear }}">{{ Gear }}</option>
-                                    {% endfor %}
+                                    <option value="0">عادي</option>
+                                    <option value="1">نصف اوتوماتيك</option>
+                                    <option value="2">اوتوماتيك</option>
                                 </select>
                             </div>
+
                             <div class="col-md-10 form-group" style="text-align: center">
-                                <label><b>Select the Glass Type:</b> </label><br>
+                                <label><b>Select the Glass Type:</b></label><br>
                                 <select class="selectpicker form-control" id="Glass" name="Glass" required="1">
-                                    {% for Glass in Glass %}
-                                    <option value="{{ Glass }}">{{ Glass }}</option>
-                                    {% endfor %}
+                                    <option value="0">يدوي</option>
+                                    <option value="1">الكتروني</option>
                                 </select>
                             </div>
+
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Power :</b> </label><br>
                                 <select class="selectpicker form-control" id="Power" name="Power" required="1">
@@ -118,13 +121,13 @@
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
-                                <label><b>Select the Payment:</b> </label><br>
+                                <label><b>Select the Payment:</b></label><br>
                                 <select class="selectpicker form-control" id="Payment" name="Payment" required="1">
-                                    {% for Payment in Payment %}
-                                    <option value="{{ Payment }}">{{ Payment }}</option>
-                                    {% endfor %}
+                                    <option value="0">نقدا فقط</option>
+                                    <option value="1">إمكانية التقسيط</option>
                                 </select>
                             </div>
+
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Previous_owners:</b> </label><br>
                                 <select class="selectpicker form-control" id="Previous_owners" name="Previous_owners"
@@ -135,87 +138,78 @@
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
-                                <label><b>Select the Condition Type:</b> </label><br>
+                                <label><b>Select the Condition Type:</b></label><br>
                                 <select class="selectpicker form-control" id="Condition" name="Condition" required="1">
-                                    {% for Condition in Condition %}
-                                    <option value="{{ Condition }}">{{ Condition }}</option>
-                                    {% endfor %}
+                                    <option value="1">يوجد</option>
+                                    <option value="0">لا يوجد</option>
                                 </select>
                             </div>
+
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Central locking:</b> </label><br>
                                 <select class="selectpicker form-control" id="Central_locking" name="Central_locking"
                                     required="1">
-                                    {% for Central_locking in Central_locking %}
-                                    <option value="{{ Central_locking }}">{{ Central_locking }}</option>
-                                    {% endfor %}
+                                    <option value="1">يوجد</option>
+                                    <option value="0">لا يوجد</option>
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Alarm:</b> </label><br>
                                 <select class="selectpicker form-control" id="Alarm" name="Alarm" required="1">
-                                    {% for Alarm in Alarm %}
-                                    <option value="{{ Alarm }}">{{ Alarm }}</option>
-                                    {% endfor %}
+                                    <option value="1">يوجد</option>
+                                    <option value="0">لا يوجد</option>
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Radio:</b> </label><br>
                                 <select class="selectpicker form-control" id="Radio" name="Radio" required="1">
-                                    {% for Radio in Radio %}
-                                    <option value="{{ Radio }}">{{ Radio }}</option>
-                                    {% endfor %}
+                                    <option value="1">يوجد</option>
+                                    <option value="0">لا يوجد</option>
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Sunroof:</b> </label><br>
                                 <select class="selectpicker form-control" id="Sunroof" name="Sunroof" required="1">
-                                    {% for Sunroof in Sunroof %}
-                                    <option value="{{ Sunroof }}">{{ Sunroof }}</option>
-                                    {% endfor %}
+                                    <option value="1">يوجد</option>
+                                    <option value="0">لا يوجد</option>
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Magnesium wheels:</b> </label><br>
                                 <select class="selectpicker form-control" id="Magnesium_wheels" name="Magnesium_wheels"
                                     required="1">
-                                    {% for Magnesium_wheels in Magnesium_wheels %}
-                                    <option value="{{ Magnesium_wheels }}">{{ Magnesium_wheels }}</option>
-                                    {% endfor %}
+                                    <option value="1">يوجد</option>
+                                    <option value="0">لا يوجد</option>
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Leather seats:</b> </label><br>
                                 <select class="selectpicker form-control" id="Leather_seats" name="Leather_seats"
                                     required="1">
-                                    {% for Leather_seats in Leather_seats %}
-                                    <option value="{{ Leather_seats }}">{{ Leather_seats }}</option>
-                                    {% endfor %}
+                                    <option value="1">يوجد</option>
+                                    <option value="0">لا يوجد</option>
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the Airbag:</b> </label><br>
                                 <select class="selectpicker form-control" id="Airbag" name="Airbag" required="1">
-                                    {% for Airbag in Airbag %}
-                                    <option value="{{ Airbag }}">{{ Airbag }}</option>
-                                    {% endfor %}
+                                    <option value="1">يوجد</option>
+                                    <option value="0">لا يوجد</option>
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the For_sale:</b> </label><br>
                                 <select class="selectpicker form-control" id="For_sale" name="For_sale" required="1">
-                                    {% for For_sale in For_sale %}
-                                    <option value="{{ For_sale }}">{{ For_sale }}</option>
-                                    {% endfor %}
+                                    <option value="1">للبيع</option>
+                                    <option value="0">لا</option>
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
                                 <label><b>Select the For exchange:</b> </label><br>
                                 <select class="selectpicker form-control" id="For_exchange" name="For_exchange"
                                     required="1">
-                                    {% for For_exchange in For_exchange %}
-                                    <option value="{{ For_exchange }}">{{ For_exchange }}</option>
-                                    {% endfor %}
+                                    <option value="1">للتبديل</option>
+                                    <option value="0">لا</option>
                                 </select>
                             </div>
                             <div class="col-md-10 form-group" style="text-align: center">
